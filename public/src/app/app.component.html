@@ -1,0 +1,52 @@
+<main id="grid_container" *ngIf="loggedIn">
+  <h1 id="header">Rate My Cakes</h1>
+  
+  <button id="newFormBtn" class="btn btn-primary" *ngIf="!newForm">Add cake</button>
+
+  <section id="newCake" *ngIf="newForm">
+
+  </section>
+
+
+
+
+      <section id="Details">
+        <aside id="image">
+
+        </aside>
+
+        <aside id="title">
+
+        </aside>
+
+        <aside id="list">
+
+        </aside>
+
+      </section>
+
+      <form id="newForm" (submit)="">
+        <p id="head">Submit a cake to be rated</p>
+        <input type="text" id="name">
+        <input type="text" id="imageurl">
+        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+      </form>
+
+      
+      <section id="Rating">
+        <img id="rimage">
+
+        <form id="ratingval">
+          <select id="value">
+            <option></option>
+          </select>
+          <input type="text" id="comment">
+          <button type="submit" class="btn btn-success" id="rateBtn"></button>
+        </form>
+      </section>
+
+
+
+
+
+</main>
