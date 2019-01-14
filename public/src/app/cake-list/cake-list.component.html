@@ -1,0 +1,13 @@
+<section class="allOverflow" *ngFor="let cake of cakes">
+  <form class="rateForm" (submit)="rate(cake)">
+    <select name="rating" [(ngModel)]="newRating.rating" class="form-control w-75 ml-auto mr-auto mt-2 mb-2">
+      <option [ngValue]="1">1 star</option>
+      <option *ngFor="let num of ratings"  [ngValue]="num">{{num}} stars</option>
+      
+    </select>
+    <input type="text" class="form-control w-75 mr-auto ml-auto" placeholder="Type your comment here" [(ngModel)]="newRating.comment" name="comment">
+    <button type="submit" class="h-25 mt-2 ml-5 btn" id="rateBtn">Rate!</button>
+  {{ newRating | json }}
+  </form>
+  <img [src]="cake.image" (click)="setSingle(cake)" class="listImage" />
+</section>

@@ -33,11 +33,7 @@ module.exports = {
         console.log('logging request params in express controller');
         console.log(request.body);
         
-        Cake.findOneAndUpdate({ _id: request.params.id }, {
-            title: request.body.title,
-            description: request.body.description,
-            completed: request.body.completed
-        }, function (err, data) {
+        Cake.findOneAndUpdate({ _id: request.params.id }, {request.body}, function (err, data) {
             if (err) {
                 response.json({ message: "Error", error: err });
             }

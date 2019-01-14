@@ -21,8 +21,8 @@ export class HttpService {
     return this._http.post('/api/new', newCake);
   }
 
-  updateCake(CakeId, CakeData) {
-    return this._http.put(`/api/update/${CakeId}`, CakeData);
+  updateCake(cake) {
+    return this._http.put(`/api/update/${cake._id}`, cake);
   }
 
   deleteCake(CakeId) {

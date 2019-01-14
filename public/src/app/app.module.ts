@@ -8,11 +8,13 @@ import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+import { CakeListComponent } from './cake-list/cake-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CakeComponent
+    CakeComponent,
+    CakeListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,13 @@
-<p>
-  cake works!
-</p>
+<section class="details_grid">
+  <h1 class="dHeader">Baked By {{ singleCake.baker }}</h1>
+  {{singleCake | json }}
+  <section class="tableData">
+    <dl>
+      
+      <dt>Average Rating: {{ calculateRatings(singleCake) }} stars</dt>
+      <dd *ngFor="let rating of singleCake.ratings">{{ rating.rating }}</dd>
+      <dd>{{ rating.comment }}</dd>
+    </dl>
+  </section>
+  <img [src]="singleCake.image" id="detailsImg">
+</section>

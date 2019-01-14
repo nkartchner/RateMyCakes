@@ -1,52 +1,19 @@
-<main id="grid_container" *ngIf="loggedIn">
-  <h1 id="header">Rate My Cakes</h1>
-  
-  <button id="newFormBtn" class="btn btn-primary" *ngIf="!newForm">Add cake</button>
+<main id="grid_container">
+    <header id="title">
+        <h1>Rate my cakes</h1>
+    </header>
+    
+    <form id="newForm" class="form-group border border-dark pt-2 pl-2 pr-2" (submit)="submitNew()"> 
+        <h5 class="text-center text-black-50 border border-top-0 border-right-0 border-left-0 border-dark">submit a cake to be rated</h5>
+        <label for="newCake.baker" class="mb-0 ml-2">Baker Name:</label>                 
+        <input type="text" class="form-control" name="newCake.baker" [(ngModel)]="newCake.baker" placeholder="Charlie Brown">
+    <label class="ml-2 mt-2 text-capitalize">Image Url:</label>
+        <input type="url" class="form-control mb-2" name="newCake.image" [(ngModel)]="newCake.image" placeholder="http://www.ratemycake.com/13">
+        <button type="submit" class="btn btn-primary">Submit</button>                 
+    </form>
 
-  <section id="newCake" *ngIf="newForm">
-
-  </section>
-
-
-
-
-      <section id="Details">
-        <aside id="image">
-
-        </aside>
-
-        <aside id="title">
-
-        </aside>
-
-        <aside id="list">
-
-        </aside>
-
-      </section>
-
-      <form id="newForm" (submit)="">
-        <p id="head">Submit a cake to be rated</p>
-        <input type="text" id="name">
-        <input type="text" id="imageurl">
-        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-      </form>
-
-      
-      <section id="Rating">
-        <img id="rimage">
-
-        <form id="ratingval">
-          <select id="value">
-            <option></option>
-          </select>
-          <input type="text" id="comment">
-          <button type="submit" class="btn btn-success" id="rateBtn"></button>
-        </form>
-      </section>
-
-
-
-
+    <app-cake-list class="all" [cakes]="cakes" (event)="setSingle($event)"></app-cake-list>
+    
+    <app-cake class="details" *ngIf="singleCake" [singleCake]="singleCake"></app-cake>
 
 </main>
